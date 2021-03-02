@@ -1,18 +1,17 @@
 document.write(`
 <nav id="navbar">
-    <div id="nav-container" class="container">
-      <div class="item">
+      <div class="container">
         <a href="index.html">
-          <img src="Photos/headshot.jpg" alt="">
+          <img src="Photos/headshot_new.jpeg" alt="" width="50px" />
         </a>
-      </div>
-      <div class="item"></div>
-      <div class="item nav-links">
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="cfa.html">CFA</a>
-        <button id='menu-toggler'>=</button>
+        <button id="menu-toggler">=</button>
       </div>
     </div>
-  </nav>`);
-
-  console.log("finished!");
+    <div id="mobile-menu">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="cfa.html">CFA</a></div>
+    </div>
+    </nav>`);

@@ -1,19 +1,3 @@
-const menuToggler = document.querySelector('#menu-toggler');
-const mobileMenu = document.querySelector('#mobile-menu');
-
-menuToggler.addEventListener('click', function () {
-  if (menuToggler.classList.contains('open')) {
-    menuToggler.textContent = '=';
-    menuToggler.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  } else {
-    menuToggler.textContent = 'x';
-    menuToggler.classList.add('open');
-    mobileMenu.classList.add('open');
-  }
-})
-
-
 const photoViewer = document.querySelector('#photo-viewer');
 const viewerImage = photoViewer.querySelector('img');
 const photos = document.querySelectorAll('.photo');
@@ -29,7 +13,6 @@ function handleClick(e) {
 }
 
 function empty() {
-  
 }
 
 function close(e) {
