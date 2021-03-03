@@ -25,3 +25,11 @@ function createTable(item, index) {
         <th>${item.rewardsPerDollar.toFixed(2)}</th>
       </tr>`;
 }
+
+const delayTable = () => { 
+  const table = document.querySelector('.cfa.table');
+  console.log(table);
+
+}
+
+delayTable();
