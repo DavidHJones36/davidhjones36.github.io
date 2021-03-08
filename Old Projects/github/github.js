@@ -5,7 +5,7 @@ class Github {
     // this.client_secret =  '9f582a777ed41d2c75ddeb7bd843dc78791706f0';
     this.config = {
       headers: {
-        Authorization: 'token 16169fc55b56ebaef52fee61c048acb122198db0'
+        Authorization: 'token b62404d1f759148f2f642911d1d5dec18e560cc0'
       }
     }
     this.repos_count = 5;
