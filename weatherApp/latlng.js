@@ -1,6 +1,6 @@
 class Latlng {
   constructor() {
-    this.apiKey = 'AIzaSyC3yKBcvr6V6dwfY1PY2139VYXCcGaNTuA';
+    this.apiKey = '';
   }
 
   async getLatLng(zip) {
