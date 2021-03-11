@@ -4,6 +4,7 @@ const weather = new Weather(),
   latlng = new Latlng(),
   uiZip = document.getElementById('zip'),
   changeBtn = document.getElementById("change-btn"),
+  changeForm = document.getElementById('w-form'),
   closeBtn = document.getElementById("close-btn"),
   zipAlert = document.querySelector(".alert"),
   contentCol = document.getElementById("content-col");
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", getWeather);
 
 function getWeather() {
   storedZip = storage.getLocationData();
-  if (storedZip === "" || storedZip.length < 5 || isNaN(storedZip)) {
+  if (storedZip === null || storedZip.length < 5 || isNaN(storedZip)) {
     $("#locModal").modal("show");
     return;
   } else {
@@ -30,10 +31,11 @@ function getWeather() {
   contentCol.style.display = "block";
 }
 
-changeBtn.addEventListener("click", (e) => {
+changeForm.addEventListener("submit", (e) => {
   uiZipValue = document.getElementById('zip').value;
   storage.setLocationData(uiZipValue);
   getWeather();
+  e.preventDefault();
 });
 
 uiZip.addEventListener('keyup', (e) => {

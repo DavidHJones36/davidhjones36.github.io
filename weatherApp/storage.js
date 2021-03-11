@@ -5,17 +5,17 @@ class Storage {
   }
 
   getLocationData() {
-    if(localStorage.getItem('zip') === null) {
-      this.zip = this.defaultZip;
-    } else {
-      this.zip = localStorage.getItem('zip');
-    }
+    // if(localStorage.getItem('zip') === null) {
+    //   this.zip = this.defaultZip;
+    // } else {
+    //   this.zip = localStorage.getItem('zip');
+    // }
+    this.zip = localStorage.getItem('zip');
     return this.zip;
   
   }
   
   setLocationData(zip) {
-    console.log('running');
     localStorage.setItem('zip', zip);
   }
 }
