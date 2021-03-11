@@ -1,10 +1,10 @@
 class Latlng {
   constructor() {
-    this.apiKey = 'AIzaSyC3yKBcvr6V6dwfY1PY2139VYXCcGaNTuA';
+    this.apiKey = '3a2e6b8f62670c89d9f639e1ca7628a7';
   }
 
   async getLatLng(zip) {
-    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?&components=postal_code:${zip}&key=${this.apiKey}`);
+    const response = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${this.apiKey}`);
 
     const responseData = await response.json();
 

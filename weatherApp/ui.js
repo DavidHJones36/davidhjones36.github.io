@@ -11,8 +11,8 @@ class UI {
     this.wind = document.getElementById('w-wind');
   }
 
-  paint(weather, city, state) {
-    this.location.textContent = `${city}, ${state}`;
+  paint(weather, city) {
+    this.location.textContent = `${city}`;
     this.desc.textContent = weather.current.weather[0].main;
     this.string.textContent = `${weather.current.temp} ºF`;
     this.icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.current.weather[0].icon}@2x.png`);

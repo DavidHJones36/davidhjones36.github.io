@@ -1,31 +1,45 @@
-const weather = new Weather,
-store = new Store,
-ui = new UI,
-latlng = new Latlng,
-changeBtn = document.getElementById('change-btn')
-zip = document.getElementById('zip').value;
+const weather = new Weather(),
+  storage = new Storage(),
+  ui = new UI(),
+  latlng = new Latlng(),
+  uiZip = document.getElementById('zip'),
+  changeBtn = document.getElementById("change-btn"),
+  closeBtn = document.getElementById("close-btn"),
+  zipAlert = document.querySelector(".alert"),
+  contentCol = document.getElementById("content-col");
+  let uiZipValue = '',
+  storedZip = '';
 
-document.addEventListener('DOMContentLoaded', getWeather(zip));
+document.addEventListener("DOMContentLoaded", getWeather);
 
-function getWeather(zip){
-
-  if(zip.length<5 || isNaN(zip)){
-    //Alert
+function getWeather() {
+  storedZip = storage.getLocationData();
+  if (storedZip === "" || storedZip.length < 5 || isNaN(storedZip)) {
+    $("#locModal").modal("show");
+    return;
   } else {
-    latlng.getLatLng(zip)
-    .then(latlngdata => {
-      let city = latlngdata.results[0].address_components[1].short_name,
-      state = latlngdata.results[0].address_components[3].short_name;
-      weather.getWeather(latlngdata)
-      .then(weatherData => {
-        ui.paint(weatherData, city, state);
-      })
-    }
-      );
-    
+    $("#locModal").modal("hide");
   }
+  latlng.getLatLng(storedZip).then((latlngdata) => {
+    let city = latlngdata.name;
+    //   state = latlngdata.results[0].address_components[3].short_name;
+    weather.getWeather(latlngdata).then((weatherData) => {
+      ui.paint(weatherData, city);
+    });
+  });
+  contentCol.style.display = "block";
 }
 
-changeBtn.addEventListener('click', (e) => {
-  
+changeBtn.addEventListener("click", (e) => {
+  uiZipValue = document.getElementById('zip').value;
+  storage.setLocationData(uiZipValue);
+  getWeather();
+});
+
+uiZip.addEventListener('keyup', (e) => {
+  if(e.target.value.length < 5 || isNaN(e.target.value)){
+    zipAlert.classList.remove("d-none");
+  } else {
+    zipAlert.classList.add("d-none");
+  }
 });

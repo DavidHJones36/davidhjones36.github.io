@@ -4,26 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css"
-      integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="../favicon.png" />
-    <style>
-      #weather-info{
-        display: none;
-      }
-    </style>
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div
-          class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded"
-        >
+        <div id="content-col" style="display: none;" class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
           <div id="weather-info">
             <h1 id="w-location"></h1>
             <h3 class="text-dark" id="w-desc"></h3>
@@ -39,8 +27,8 @@
             <button
               type="button"
               class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#locModal"
+              data-toggle="modal"
+              data-target="#locModal"
             >
               Change Location
             </button>
@@ -54,6 +42,7 @@
       class="modal fade"
       id="locModal"
       tabindex="-1"
+      role="dialog"
       aria-labelledby="locModalLabel"
       aria-hidden="true"
     >
@@ -63,10 +52,13 @@
             <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
             <button
               type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
+              class="close"
+              data-dismiss="modal"
               aria-label="Close"
             ></button>
+          </div>
+          <div class="alert alert-danger d-none">
+            Please enter a valid Zip Code
           </div>
           <div class="modal-body">
             <form id="w-form">
@@ -83,9 +75,10 @@
           </div>
           <div class="modal-footer">
             <button
+              id="close-btn"
               type="button"
               class="btn btn-secondary"
-              data-bs-dismiss="modal"
+              data-dismiss="modal"
             >
               Close
             </button>
@@ -98,8 +91,18 @@
     </div>
 
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
     <script src="storage.js"></script>
