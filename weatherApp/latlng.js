@@ -4,7 +4,7 @@ class Latlng {
   }
 
   async getLatLng(zip) {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${this.apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${this.apiKey}`);
 
     const responseData = await response.json();
 
