@@ -6,12 +6,12 @@ document.write(`
         </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="cfa.html">CFA</a>
+        <a href="https://plagueis13.github.io">CFA</a>
         <button id="menu-toggler">=</button>
       </div>
     </div>
     <div id="mobile-menu">
       <div><a href="index.html">Home</a></div>
-      <div><a href="cfa.html">CFA</a></div>
+      <div><a href="https://plagueis13.github.io">CFA</a></div>
     </div>
     </nav>`);

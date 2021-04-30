@@ -1,0 +1,22 @@
+{
+  "name": "davidhjones36.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidHJones36/davidhjones36.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidHJones36/davidhjones36.github.io/issues"
+  },
+  "homepage": "https://github.com/DavidHJones36/davidhjones36.github.io#readme",
+  "dependencies": {
+    "pg": "^8.5.1"
+  }
+}
