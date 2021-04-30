@@ -90,6 +90,9 @@ header :is(h1,h2,h3,h4,h5,h6,p,a){
   justify-items: center;
 }
 
+.info{
+  padding:0 1.5rem;
+}
 .info :is(h1,p){
   line-height: 1.6;
 }
