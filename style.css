@@ -96,3 +96,21 @@ header :is(h1,h2,h3,h4,h5,h6,p,a){
 .info :is(h1,p){
   line-height: 1.6;
 }
+
+#email-icon{
+  overflow: visible;
+}
+
+#email-icon #email-top{
+  transform: rotateX(0deg);
+  /* transform: scale(1.1); */
+  transform-origin: center 25%;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#email-icon:hover #email-top{
+  transform: rotateX(-180deg);
+  /* transform: scale(1.1); */
+  transform-origin: center 25%;
+  transition: all 0.5s ease-in-out 0s;
+}
