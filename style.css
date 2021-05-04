@@ -35,6 +35,7 @@ h4,
 h5,
 h6 {
   font-weight: 600;
+  text-align: center;
 }
 
 h1{
@@ -43,6 +44,10 @@ h1{
 h2{
   font-size: 2rem;
   font-weight: normal;
+}
+h3{
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 p {
@@ -56,7 +61,6 @@ p {
 } */
 
 a {
-  font-size: 1.2rem;
   text-decoration: none;
 }
 
@@ -80,6 +84,17 @@ header :is(h1,h2,h3,h4,h5,h6,p,a){
   color: white;
 }
 
+footer {
+  background-color: var(--blue);
+  min-height: 3rem;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  text-justify: left;
+}
+
 .container{
   max-width: 700px;
   margin:0 auto;
@@ -90,11 +105,40 @@ header :is(h1,h2,h3,h4,h5,h6,p,a){
   justify-items: center;
 }
 
+.social {
+  grid-template-columns:1fr 1fr 1fr;
+}
+
 .info{
   padding:0 1.5rem;
+  margin-bottom: 2rem;
 }
 .info :is(h1,p){
   line-height: 1.6;
+}
+
+header .social a:hover{
+  opacity: 100%;
+}
+
+.photos .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(533px,1fr));
+  grid-auto-rows: 300px;
+  gap: 0.5rem; */
+}
+
+.img-card{
+  flex: 1 1 300px;
+  min-height: 300px;
+  max-width: 700px;
+  margin: 0.5rem;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 #email-icon{
@@ -103,14 +147,59 @@ header :is(h1,h2,h3,h4,h5,h6,p,a){
 
 #email-icon #email-top{
   transform: rotateX(0deg);
-  /* transform: scale(1.1); */
   transform-origin: center 25%;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
 }
 
 #email-icon:hover #email-top{
   transform: rotateX(-180deg);
-  /* transform: scale(1.1); */
   transform-origin: center 25%;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+#linkedin-icon #i-dot{
+  transform: scale(1);
+  transform-origin: 34px 30.5px;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+#linkedin-icon:hover #i-dot{
+  transform: scale(1.5);
+  transform-origin: 34px 30.5px;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+#instagram-icon #insta-lens{
+  transform: scale(1);
+  transform-origin: 12px 12px;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+#instagram-icon:hover #insta-lens{
+  transform: scale(.4);
+  transform-origin: 12px 12px;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+#lightbox {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 999;
+}
+
+#lightbox.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+#close-button {
+  color: white;
+  cursor: pointer;
 }
