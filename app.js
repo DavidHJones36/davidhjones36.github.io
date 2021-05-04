@@ -17,7 +17,13 @@ images.forEach(image => {
   })
 })
 
-lightbox.addEventListener('click', e=> {
+lightbox.addEventListener('click', e => {
   if(e.target !== e.currentTarget) return
   lightbox.classList.remove('open');
+})
+
+document.addEventListener('keydown', e=>{
+  if(e.key ==='Escape' && lightbox.classList.contains('open')){
+    lightbox.classList.remove('open');
+  }
 })
